@@ -1,0 +1,40 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.JookaTest" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_200</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_200</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    //Card background
+    <style name="CustomCardBackground">
+        <item name="android:background">@drawable/ripple_rounded_dark</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    //Main background
+    <style name="RoundedMainBackground">
+        <item name="android:background">@drawable/background_rounded_dark</item>
+    </style>
+    <style name="MainBackground">
+        <item name="android:background">@drawable/background_dark</item>
+    </style>
+    <style name="MainBackgroundSemiTransparent">
+        <item name="android:background">@drawable/background_semi_transparent_dark</item>
+    </style>
+
+    //Icon clickable
+    <style name="IconCircleClickableStyle">
+        <item name="android:tint">@color/light_500</item>
+        <item name="android:background">@drawable/ripple_circle_dark</item>
+    </style>
+</resources>

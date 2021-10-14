@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="isLoading"
+            type="Boolean" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        style="@style/MainBackground"
+        tools:context=".ui.fragments.SignUpFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="@dimen/semi_big_margin">
+
+            <RelativeLayout
+                android:id="@+id/relative_go_to_sign_up"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/text_input_layout_sign_up_email"
+                app:layout_constraintEnd_toEndOf="@+id/text_input_layout_sign_up_email">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_go_to_login"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_regular"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="end"
+                    android:layout_marginStart="@dimen/default_margin"
+                    android:layout_marginLeft="@dimen/default_margin"
+                    android:layout_marginTop="@dimen/semi_big_margin"
+                    android:layout_toEndOf="@+id/text_no_account"
+                    android:layout_toRightOf="@+id/text_no_account"
+                    android:autoLink="all"
+                    android:ellipsize="end"
+                    android:enabled="@{isLoading ? false : true, default=true}"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="@string/sign_in"
+                    android:textAllCaps="false"
+                    android:textColor="@color/blue_200"
+                    app:rippleColor="@color/light_300" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/text_no_account"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_regular"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/default_margin"
+                    android:layout_marginLeft="@dimen/default_margin"
+                    android:layout_marginTop="@dimen/semi_big_margin"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="@string/have_an_account" />
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="20dp"
+                app:layout_constraintBottom_toTopOf="@+id/text_input_layout_sign_up_email"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:src="@drawable/ic_baseline_account_circle_24"
+                android:tint="@color/main_color_200" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/text_input_layout_sign_up_email"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:hint="@string/email"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                app:errorEnabled="true"
+                android:soundEffectsEnabled="true"
+                app:hintAnimationEnabled="true"
+                app:layout_constraintBottom_toTopOf="@+id/text_input_layout_sign_up_password"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_text_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:enabled="@{isLoading ? false : true, default=true}"
+                    android:fontFamily="@font/poppins_regular"
+                    android:inputType="textEmailAddress"
+                    app:textInputLayoutFocusedRectEnabled="true" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/text_input_layout_sign_up_password"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:hint="@string/password"
+                android:maxLines="1"
+                app:endIconMode="password_toggle"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textSize="14sp"
+                android:textStyle="normal"
+                app:errorEnabled="true"
+                android:soundEffectsEnabled="true"
+                app:hintAnimationEnabled="true"
+                app:layout_constraintBottom_toTopOf="@+id/text_input_layout_sign_up_confirm_password"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_text_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:enabled="@{isLoading ? false : true, default=true}"
+                    android:fontFamily="@font/poppins_regular"
+                    android:inputType="textPassword"
+                    android:nextFocusDown="@id/button_sign_up" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/text_input_layout_sign_up_confirm_password"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:hint="@string/confirm_password"
+                android:maxLines="1"
+                app:endIconMode="password_toggle"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textSize="14sp"
+                android:textStyle="normal"
+                app:errorEnabled="true"
+                android:soundEffectsEnabled="true"
+                app:hintAnimationEnabled="true"
+                app:layout_constraintBottom_toTopOf="@+id/button_sign_up"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_text_confirm_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:enabled="@{isLoading ? false : true, default=true}"
+                    android:fontFamily="@font/poppins_regular"
+                    android:inputType="textPassword"
+                    android:nextFocusDown="@id/button_sign_up" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_sign_up"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sign_up"
+                android:visibility="@{!isLoading ? View.VISIBLE : View.INVISIBLE, default=visible}"
+                app:backgroundTint="@color/main_color_200"
+                app:layout_constraintBottom_toTopOf="@+id/relative_go_to_sign_up"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+
+            <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:id="@+id/progress_sign_up"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:indeterminate="true"
+                android:visibility="@{isLoading ? View.INVISIBLE : View.GONE, default=gone}"
+                app:indicatorColor="@color/main_color_200"
+                app:layout_constraintBottom_toTopOf="@+id/relative_go_to_sign_up"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

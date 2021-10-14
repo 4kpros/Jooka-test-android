@@ -1,0 +1,2 @@
+rootProject.name = "Jooka test"
+include ':app'

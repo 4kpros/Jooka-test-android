@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "390816632899",
+    "project_id": "jooka-test-aef87",
+    "storage_bucket": "jooka-test-aef87.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:390816632899:android:a0c656b8940a0437f644f6",
+        "android_client_info": {
+          "package_name": "com.example.jookatest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "390816632899-3k0iui1m7atpvt327vriuuu4vvruq2ig.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwK3Xv9LmL6Cy3OKENqoGC_q3FzDTzWtU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "390816632899-3k0iui1m7atpvt327vriuuu4vvruq2ig.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
